@@ -1,10 +1,16 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 20202pf.cc0002
  */
-public class Endereco {
+@Entity
+@Table(name = "tb_endereco")
+public class Endereco implements Serializable{
+
+@Id
 
 //atributos seguindo a nomenclatra do DC (diagrama de classes)
     private Integer id;
