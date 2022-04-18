@@ -1,6 +1,5 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class Compra {
     private Calendar data;
     private Float total;
     private Jogador jogador;
-    private List<ItensCompra> intensCompra = new ArrayList ();
+    private List<ItensCompra> intensCompra;
     
     public Compra() {
         

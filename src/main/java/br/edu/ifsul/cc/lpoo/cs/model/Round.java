@@ -1,6 +1,7 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -12,6 +13,10 @@ public class Round {
     private Integer numero;
     private Calendar inicio;
     private Calendar fim;
+    private List<Objetivo> objetivos;
+    private Modo modo;
+    private ResultadoID resultadoID;
+    private Partida partida;
 
     public Round() {
 
@@ -71,6 +76,62 @@ public class Round {
      */
     public void setFim(Calendar fim) {
         this.fim = fim;
+    }
+
+    /**
+     * @return the objetivos
+     */
+    public List<Objetivo> getObjetivos() {
+        return objetivos;
+    }
+
+    /**
+     * @param objetivos the objetivos to set
+     */
+    public void setObjetivos(List<Objetivo> objetivos) {
+        this.objetivos = objetivos;
+    }
+
+    /**
+     * @return the modo
+     */
+    public Modo getModo() {
+        return modo;
+    }
+
+    /**
+     * @param modo the modo to set
+     */
+    public void setModo(Modo modo) {
+        this.modo = modo;
+    }
+
+    /**
+     * @return the resultadoID
+     */
+    public ResultadoID getResultadoID() {
+        return resultadoID;
+    }
+
+    /**
+     * @param resultadoID the resultadoID to set
+     */
+    public void setResultadoID(ResultadoID resultadoID) {
+        this.resultadoID = resultadoID;
+    }
+
+    /**
+     * @return the partida
+     */
+    public Partida getPartida() {
+        return partida;
+    }
+
+    /**
+     * @param partida the partida to set
+     */
+    public void setPartida(Partida partida) {
+        this.partida = partida;
     }
 
 }

@@ -9,6 +9,7 @@ public class ItensCompra {
     private Integer id;
     private String quantidade;
     private Float valor;
+    private Compra compra; //agregação por composiçãoc - ref. ent. forte.
 
     public ItensCompra() {
 
@@ -36,6 +37,20 @@ public class ItensCompra {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    /**
+     * @return the compra
+     */
+    public Compra getCompra() {
+        return compra;
+    }
+
+    /**
+     * @param compra the compra to set
+     */
+    public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
  * @author 20202pf.cc0002
  */
 public class Jogador {
+
     private String nickname;
     private String senha;
     private Integer pontos;
@@ -15,10 +16,11 @@ public class Jogador {
     private Calendar data_ultimo_login;
     private Endereco endereco; // Associação
     private List<Patente> patentes; // Agregação
-    
+    private List<Artefato> artefatos; // Agregação
+    private List<Compra> compras; // Agregação por composição
 
     public Jogador() {
-        
+
     }
 
     /**
@@ -119,5 +121,33 @@ public class Jogador {
         this.patentes = patentes;
     }
 
-    
+    /**
+     * @return the artefatos
+     */
+    public List<Artefato> getArtefatos() {
+        return artefatos;
+    }
+
+    /**
+     * @param artefatos the artefatos to set
+     */
+    public void setArtefatos(List<Artefato> artefatos) {
+        this.artefatos = artefatos;
+    }
+
+    /**
+     * @return the compras
+     */
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    /**
+     * @param compras the compras to set
+     */
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+
+
 }

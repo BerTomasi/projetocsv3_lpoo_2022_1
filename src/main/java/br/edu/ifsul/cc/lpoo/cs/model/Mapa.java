@@ -1,17 +1,19 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.util.List;
+
 /**
  *
  * @author 20202pf.cc0002
  */
-public class Patente {
+public class Mapa {
 
     private Integer id;
     private String nome;
-    private String cor;
-    
-    public Patente() {
-        
+    private List<Local> locais;
+
+    public Mapa() {
+
     }
 
     /**
@@ -43,16 +45,17 @@ public class Patente {
     }
 
     /**
-     * @return the cor
+     * @return the locais
      */
-    public String getCor() {
-        return cor;
+    public List<Local> getLocais() {
+        return locais;
     }
 
     /**
-     * @param cor the cor to set
+     * @param locais the locais to set
      */
-    public void setCor(String cor) {
-        this.cor = cor;
+    public void setLocais(List<Local> locais) {
+        this.locais = locais;
     }
+
 }

@@ -4,14 +4,14 @@ package br.edu.ifsul.cc.lpoo.cs.model;
  *
  * @author 20202pf.cc0002
  */
-public class Patente {
+public class Artefato {
 
     private Integer id;
     private String nome;
-    private String cor;
-    
-    public Patente() {
-        
+    private Float valor;
+    private Float peso;
+
+    public Artefato() {
     }
 
     /**
@@ -43,16 +43,31 @@ public class Patente {
     }
 
     /**
-     * @return the cor
+     * @return the valor
      */
-    public String getCor() {
-        return cor;
+    public Float getValor() {
+        return valor;
     }
 
     /**
-     * @param cor the cor to set
+     * @param valor the valor to set
      */
-    public void setCor(String cor) {
-        this.cor = cor;
+    public void setValor(Float valor) {
+        this.valor = valor;
     }
+
+    /**
+     * @return the peso
+     */
+    public Float getPeso() {
+        return peso;
+    }
+
+    /**
+     * @param peso the peso to set
+     */
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
+
 }

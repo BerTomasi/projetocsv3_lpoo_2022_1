@@ -1,6 +1,5 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class Partida {
     private Calendar inicio;
     private Calendar fim;
     private List<Jogador> jogador;
-    private List<Round> round = new ArrayList();
+    private List<Round> round;
     
     public Partida () {
         
