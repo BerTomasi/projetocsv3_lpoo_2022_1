@@ -1,17 +1,36 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
  *
  * @author 20202pf.cc0002
  */
-public class Patente {
+@Entity
+@Table(name = "tb_patente")
 
+public class Patente implements Serializable {
+
+    @Id
+    @SequenceGenerator(name = "seq_patente", sequenceName = "seq_patente_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_patente", strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    @Column(nullable = false, length = 100)
     private String nome;
+
+    @Column(nullable = false)
     private String cor;
-    
+
     public Patente() {
-        
+
     }
 
     /**

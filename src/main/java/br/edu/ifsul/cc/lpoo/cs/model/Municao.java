@@ -1,16 +1,30 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
 /**
  *
  * @author 20202pf.cc0002
  */
-public class Municao {
 
+@Entity
+@Table(name = "tb_municao")
+@DiscriminatorValue("M")
+
+public class Municao extends Artefato {
+    
+    @Column(nullable = false)
     private Boolean explosiva;
+       
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Calibre calibre;
-    private List<Arma> armas;
 
     public Municao() {
     }
@@ -43,17 +57,4 @@ public class Municao {
         this.calibre = calibre;
     }
 
-    /**
-     * @return the armas
-     */
-    public List<Arma> getArmas() {
-        return armas;
-    }
-
-    /**
-     * @param armas the armas to set
-     */
-    public void setArmas(List<Arma> armas) {
-        this.armas = armas;
-    }
 }

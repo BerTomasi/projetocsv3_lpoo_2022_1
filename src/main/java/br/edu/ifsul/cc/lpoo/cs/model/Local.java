@@ -1,19 +1,37 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 /**
  *
  * @author 20202pf.cc0002
  */
-public class Local {
+@Entity
+@Table(name = "tb_local")
 
+public class Local implements Serializable {
+
+    @Id
+    @SequenceGenerator(name = "seq_local", sequenceName = "seq_local_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_local", strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    @Column(nullable = false, length = 100)
     private String nome;
+
+    @Column(nullable = false)
     private String latitude;
+
+    @Column(nullable = false)
     private String longitude;
-    private List<Mapa> mapa;
-    private List<Objetivo> objetivos;
 
     public Local() {
     }
@@ -77,29 +95,5 @@ public class Local {
     /**
      * @return the mapa
      */
-    public List<Mapa> getMapa() {
-        return mapa;
-    }
-
-    /**
-     * @param mapa the mapa to set
-     */
-    public void setMapa(List<Mapa> mapa) {
-        this.mapa = mapa;
-    }
-
-    /**
-     * @return the objetivos
-     */
-    public List<Objetivo> getObjetivos() {
-        return objetivos;
-    }
-
-    /**
-     * @param objetivos the objetivos to set
-     */
-    public void setObjetivos(List<Objetivo> objetivos) {
-        this.objetivos = objetivos;
-    }
 
 }

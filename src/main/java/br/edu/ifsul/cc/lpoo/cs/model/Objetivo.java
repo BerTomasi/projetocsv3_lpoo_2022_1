@@ -1,18 +1,43 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 /**
  *
  * @author 20202pf.cc0002
  */
+@Entity
+@Table(name = "tb_objetivo")
+
 public class Objetivo {
 
+    @Id
+    @SequenceGenerator(name = "seq_objetivo", sequenceName = "seq_objetivo_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_objetivo", strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    @Column(nullable = false, length = 100)
     private String descricao;
+
+    @Column(nullable = false)
     private Integer pontos;
-    private List<Local> locais;
-    private ResultadoID resultadoID;
+
+    @ManyToMany
+    @JoinTable(name = "tb_objetivo", joinColumns = {
+        @JoinColumn(name = "objetivo_id")}, //agregacao, vai gerar uma tabela associativa.
+            inverseJoinColumns = {
+                @JoinColumn(name = "local_id")})
+    private List<Local> locais; //agregação
 
     public Objetivo() {
 
@@ -72,20 +97,6 @@ public class Objetivo {
      */
     public void setLocais(List<Local> locais) {
         this.locais = locais;
-    }
-
-    /**
-     * @return the resultadoID
-     */
-    public ResultadoID getResultadoID() {
-        return resultadoID;
-    }
-
-    /**
-     * @param resultadoID the resultadoID to set
-     */
-    public void setResultadoID(ResultadoID resultadoID) {
-        this.resultadoID = resultadoID;
     }
 
 }
