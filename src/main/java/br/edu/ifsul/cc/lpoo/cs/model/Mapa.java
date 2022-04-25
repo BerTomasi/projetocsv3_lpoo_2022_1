@@ -1,5 +1,6 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_mapa")
 
-public class Mapa {
+public class Mapa implements Serializable{
 
     @Id
     @SequenceGenerator(name = "seq_mapa", sequenceName = "seq_mapa_id", allocationSize = 1)
@@ -31,7 +32,7 @@ public class Mapa {
     private String nome;
 
     @ManyToMany
-    @JoinTable(name = "tb_mapa", joinColumns = {
+    @JoinTable(name = "tb_mapa_local", joinColumns = {
         @JoinColumn(name = "mapa_id")}, //agregacao, vai gerar uma tabela associativa.
             inverseJoinColumns = {
                 @JoinColumn(name = "local_id")})

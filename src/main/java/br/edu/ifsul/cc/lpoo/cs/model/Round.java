@@ -44,8 +44,8 @@ public class Round {
     private Calendar fim;
 
 @ManyToMany
-    @JoinTable(name = "tb_objetivo", joinColumns = {@JoinColumn(name = "jogador_nickname")}, //agregacao, vai gerar uma tabela associativa.
-                                       inverseJoinColumns = {@JoinColumn(name = "artefato_id")})
+    @JoinTable(name = "tb_round_objetivo", joinColumns = {@JoinColumn(name = "round_id")}, //agregacao, vai gerar uma tabela associativa.
+                                       inverseJoinColumns = {@JoinColumn(name = "objetivo_id")})
     private List<Objetivo> objetivos;
 
     @Column(nullable = false)

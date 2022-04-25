@@ -1,5 +1,6 @@
 package br.edu.ifsul.cc.lpoo.cs.model;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 @Table(name = "tb_municao")
 @DiscriminatorValue("M")
 
-public class Municao extends Artefato {
+public class Municao extends Artefato implements Serializable {
     
     @Column(nullable = false)
     private Boolean explosiva;

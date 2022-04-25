@@ -33,7 +33,7 @@ public class Objetivo {
     private Integer pontos;
 
     @ManyToMany
-    @JoinTable(name = "tb_objetivo", joinColumns = {
+    @JoinTable(name = "tb_objetivo_local", joinColumns = {
         @JoinColumn(name = "objetivo_id")}, //agregacao, vai gerar uma tabela associativa.
             inverseJoinColumns = {
                 @JoinColumn(name = "local_id")})
